@@ -10,11 +10,13 @@ public class Main
         //ESERCIZIO 1
       Scanner input=new Scanner(System.in);
       Scanner input2=new Scanner(System.in);
+      System.out.println("scrivi la lunghezza dell'array");
       int lunghezza=input.nextInt();
       Set<String> words=new HashSet<>();
       ArrayList<String>duplicate=new ArrayList<>();
       for(int i=0;i<lunghezza;i++)
       {
+          System.out.println("Scrivi la parola");
           String parola=input2.nextLine();
          if(!words.add(parola))
          {
@@ -22,16 +24,17 @@ public class Main
          }
       }
       System.out.println("parole distinte"+words);
-      System.out.println("totale parole distinte"+words.size());
-      System.out.println("totale parole duplici"+duplicate);
+      System.out.println("totale parole distinte "+words.size());
+      System.out.println("totale parole duplici "+duplicate);
             //ESERCIZIO 2
+        System.out.println("scrivi un numero");
        int valore=input.nextInt();
        ArrayList<Integer>risultato=new ArrayList<>();
        ArrayList<Integer>reversearray=new ArrayList<>();
        risultato=randomnum(valore);
-       System.out.println(risultato);
+       System.out.println("valori casuali sono "+risultato);
         reversearray=reverseoption(risultato);
-        System.out.println(reversearray);
+        System.out.println("in ordine inverso "+reversearray);
 
     }
     public static ArrayList randomnum(int n)
