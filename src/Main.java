@@ -1,3 +1,5 @@
+import esercizio1.Contattitelefonici;
+
 import java.util.*;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -8,50 +10,65 @@ public class Main
     {
 
         //ESERCIZIO 1
-      Scanner input=new Scanner(System.in);
-      Scanner input2=new Scanner(System.in);
-      System.out.println("scrivi la lunghezza dell'array");
-      int lunghezza=input.nextInt();
-      Set<String> words=new HashSet<>();
-      ArrayList<String>duplicate=new ArrayList<>();
-      for(int i=0;i<lunghezza;i++)
-      {
-          System.out.println("Scrivi la parola");
-          String parola=input2.nextLine();
-         if(!words.add(parola))
-         {
-             duplicate.add(parola);
-         }
-      }
-      System.out.println("parole distinte"+words);
-      System.out.println("totale parole distinte "+words.size());
-      System.out.println("totale parole duplici "+duplicate);
-            //ESERCIZIO 2
+        Scanner input = new Scanner(System.in);
+        Scanner input2 = new Scanner(System.in);
+        System.out.println("scrivi la lunghezza dell'array");
+        int lunghezza = input.nextInt();
+        Set<String> words = new HashSet<>();
+        ArrayList<String> duplicate = new ArrayList<>();
+        for (int i = 0; i < lunghezza; i++) {
+            System.out.println("Scrivi la parola");
+            String parola = input2.nextLine();
+            if (!words.add(parola)) {
+                duplicate.add(parola);
+            }
+        }
+        System.out.println("parole distinte" + words);
+        System.out.println("totale parole distinte " + words.size());
+        System.out.println("totale parole duplici " + duplicate);
+        //ESERCIZIO 2
         System.out.println("scrivi un numero");
-       int valore=input.nextInt();
-       ArrayList<Integer>risultato=new ArrayList<>();
-       ArrayList<Integer>reversearray=new ArrayList<>();
-       risultato=randomnum(valore);
-       System.out.println("valori casuali sono "+risultato);
-        reversearray=reverseoption(risultato);
-        System.out.println("in ordine inverso "+reversearray);
+        int valore = input.nextInt();
+        ArrayList<Integer> risultato = new ArrayList<>();
+        ArrayList<Integer> reversearray = new ArrayList<>();
+        risultato = randomnum(valore);
+        System.out.println("valori casuali sono " + risultato);
+        reversearray = reverseoption(risultato);
+        System.out.println("in ordine inverso " + reversearray);
 
+        //ESERCIZIO 3
+        Contattitelefonici Antonio = new Contattitelefonici("antonio");
+        Contattitelefonici Luca = new Contattitelefonici("Luca");
+        Contattitelefonici Matteo = new Contattitelefonici("Matteo");
+        Map<Contattitelefonici, Integer> contact = new HashMap<>();
+        contact.put(Antonio, 234324);
+        contact.put(Luca, 455213);
+        contact.put(Matteo, 84574385);
+        String cercanome=input2.nextLine();
+
+        if(contact.containsValue(Luca))
+        {
+            contact.remove(Luca);
+        }
+        System.out.println(contact.toString());
     }
+
     public static ArrayList randomnum(int n)
     {
-        Random rndm=new Random();
-        ArrayList <Integer> numeri=new ArrayList<>();
-        for(int i=0;i<n;i++)
-        {
-            numeri.add(rndm.nextInt(1,100));
+        Random rndm = new Random();
+        ArrayList<Integer> numeri = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            numeri.add(rndm.nextInt(1, 100));
         }
         return numeri;
     }
+
     public static ArrayList reverseoption(ArrayList vect)
     {
         Collections.reverse(vect);
         return vect;
     }
+
 
 
 }
